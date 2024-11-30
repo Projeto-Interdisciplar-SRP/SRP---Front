@@ -20,11 +20,12 @@ import ListarCoodenador from './componentes/coordenador/ListaCoordenador';
 import EditarCoordenador from './componentes/coordenador/EditarCoordenador';
 
 import Sobre from "./componentes/Sobre.jsx";
+import Ajuda from "./componentes/Ajuda.jsx";
 
 import Welcome from "./componentes/Welcome";
 
 //Telas Secretaria
-import Secretaria from './componentes/secretaria/InicioSecretaria';
+
 
 import PessoaCoordenador from './componentes/coordenador/visao/PessoaCoordenador.jsx';
 import CadastroOnibus from './componentes/onibus/CadastroOnibus';
@@ -32,19 +33,26 @@ import ListarOnibus from './componentes/onibus/CadastroOnibus';
 import EditarOnibus from './componentes/onibus/EditarOnibus';
 import DetalhesOnibus from './componentes/onibus/DetalhesOnibus';
 
-import CadastroViagem from './componentes/viagem/CadastroViagem';
-import ListarViagem from './componentes/viagem/ListarViagem';
-import Editarviagem from './componentes/viagem/EditarViagem';
-import Detalhesviagem from './componentes/viagem/DetalhesViagem';
+
+
 
 import Pagamento from './componentes/Pagamento.jsx'
 
 import Paróquia from './componentes/paroquias/Paróquias';
 
+
 import RelatórioPagamento from './componentes/secretaria/RelatórioPagamento.jsx'
+
+
+
+// SECRETARIA
 import OnibusSecretaria from './componentes/secretaria/visao/OnibusSecretaria.jsx';
 import CoordenadorSecretaria from './componentes/secretaria/visao/CoodenadorSecretaria.jsx';
-
+import ListarViagem from './componentes/secretaria/visao/ViagemSecretaria.jsx';
+import CadastroViagem from './componentes/viagem/CadastroViagem';
+import Secretaria from './componentes/secretaria/InicioSecretaria';
+import PessoasSecretaria from './componentes/secretaria/visao/PessoaSecretaria.jsx';
+import ReservaSecretaria from './componentes/secretaria/visao/ReservaSecretaria.jsx';
 
 
 const App = () => {
@@ -69,17 +77,18 @@ const App = () => {
           <Route path="/cadastro/coordenador" element={<CadastroCoordenador />} />
 
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/ajuda" element={<Ajuda />} />
 
           <Route path='/coordenador/onibus' element={<AuthProvider> <OnibusCoordenador /> </AuthProvider>}/>
           <Route path='/adm/onibus' element={<AuthProvider> <OnibusCoordenador /> </AuthProvider>}/>
           <Route path='/coordenador/reservas' element={<AuthProvider> <ReservaCoordenador /> </AuthProvider>}/>
 
           <Route path='/secretaria/onibus' element={<AuthProvider> <OnibusSecretaria/> </AuthProvider>}/>
-          <Route path='/secretaria/coordenador' element={<AuthProvider> <CoordenadorSecretaria/> </AuthProvider>}/>
+          <Route path='/secretaria/coordenadores' element={<AuthProvider> <CoordenadorSecretaria/> </AuthProvider>}/>
           
           <Route path="/secretaria/cadastro/coordenador" element={<CadastroCoordenador />} />
           <Route path="/confirmar/cadastro/coordenador" element={<ConfirmarCoordenador />} />
-          <Route path="/secretaria/listar/usuarios" element={ <PessoaCoordenador /> } />
+          
           <Route path="/secretaria/listar/coordenadores" element={ <ListarCoodenador /> } />
           <Route path="/secretaria/listar/coordenador/detalhes" element={ <DetalhesCoordenador /> } />
           <Route path="/secretaria/listar/coordenador/editar" element={ <EditarCoordenador /> } />
@@ -92,15 +101,17 @@ const App = () => {
           <Route path="/secretaria/listar/onibus/editar" element={ <EditarOnibus /> } />
 
           <Route path="/secretaria/cadastro/viagem" element={ <CadastroViagem /> } />
-          <Route path="/secretaria/listar/viagem" element={ <ListarViagem /> } />
-          <Route path="/secretaria/listar/viagem/detalhes" element={ <Editarviagem /> } />
-          <Route path="/secretaria/listar/viagem/editar" element={ <Detalhesviagem /> } />
+          <Route path="/secretaria/viagens" element={ <ListarViagem /> } />
+          <Route path="/secretaria/paroquias" element={ <Paróquia /> } />
+          <Route path="/secretaria/usuarios" element={ <PessoasSecretaria /> } />
+          <Route path="/secretaria/reservas" element={ <ReservaSecretaria /> } />
+          <Route path='/secretaria/onibus' element={<AuthProvider> <OnibusSecretaria /> </AuthProvider>}/>
 
-          <Route path="/pagamento" element={ <Pagamento /> } />
+          <Route path="/pagamento" element={<AuthProvider> <Pagamento /> </AuthProvider>} />
           <Route path="/cancelamento" element={ <Cancelamento /> } />
           <Route path="/relatorio" element={ <RelatórioPagamento /> } />
 
-          <Route path="/paroquias" element={ <Paróquia /> } />
+          
           
       </Routes>
     </Router>

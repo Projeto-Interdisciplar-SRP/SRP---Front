@@ -63,7 +63,7 @@ export default function Header({ which }) {
               <a href="/inicio">Inicio</a>
             </li>
             <li>
-              <a href="">Sobre</a>
+              <a href="/sobre">Sobre</a>
             </li>
             <li>
               <a href="">Viagem</a>
@@ -72,7 +72,7 @@ export default function Header({ which }) {
               <a href="">Cancelamento</a>
             </li>
             <li>
-              <a href="">Ajuda</a>
+              <a href="/ajuda">Ajuda</a>
             </li>
           </ul>
           <div className="entrar-perfil">
@@ -109,6 +109,52 @@ export default function Header({ which }) {
             <li className="linkSelect">
               <a href="/sobre" className="link">
                 Sobre
+              </a>
+            </li>
+            <li className="linkSelect">
+              <a onClick={logOut} className="link">
+                Sair
+              </a>
+            </li>
+          </ul>
+        </nav>
+      );
+    case "funcsecretaria":
+      return (
+        <nav className="navBarWrapper" id="navBarWrapper">
+          <div className="logoWrapper">
+            <div className="logo">SRP</div>
+          </div>
+          <div className="menuIconWrapper" id="menuIconWrapper"></div>
+          <ul className="navLink" id="navBar">
+            <li className="linkSelect">
+              <a href="/secretaria/usuarios" className="link">
+                Pessoas
+              </a>
+            </li>
+            <li>
+            <a href="/secretaria/coordenadores" className="link">
+                Coordenadores
+              </a>
+            </li>
+            <li className="linkSelect">
+              <a href="/secretaria/onibus" className="link">
+                Ônibus
+              </a>
+            </li>
+            <li className="linkSelect">
+              <a href="/secretaria/reservas" className="link">
+                Reservas
+              </a>
+            </li>
+            <li className="linkSelect">
+              <a href="/secretaria/viagens" className="link">
+                Viagens
+              </a>
+            </li>
+            <li className="linkSelect">
+              <a href="/secretaria/paroquias" className="link">
+                Paróquias
               </a>
             </li>
             <li className="linkSelect">
